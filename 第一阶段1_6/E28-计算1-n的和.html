@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算1-n的和</title>
+</head>
+<body>
+    
+    <script>
+    //实现1 到 n 的和
+    function sum( n ){
+        //实现1 - n的计算
+        //如果是负数 0 字符串 null  undefined false等  不能继续
+        // 如果用户传来的数据不是数字  则返回NaN
+        //如果用户穿过来的数据不是大于1的数字：返回0
+        
+        if( typeof( n ) != "number" ){
+            return NaN;//直接但会NaN 如果函数中执行遇到了return  语句 函数立即结束
+        }
+
+        if ( n < 1 ){
+            return 0;
+        }
+
+        //在大于1的情况下
+        var i = 1,result = 0;
+        while( i <= n ){
+            result += i;
+            i++;
+        }
+
+        return result;//把计算结果返回
+
+    }
+    var t = sum(7);
+    console.log( t );
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匿名函数</title>
+</head>
+<body>
+    <script>
+    //匿名函数
+    var f = function( a ){
+        return a * a;
+    };//要加分号
+
+    //因为用var声明的一个变量f，f的类型就是function
+    //f 变量跟其他 变量一样使用  可以作为其他 函数的参数使用
+    console.log( typeof(f) );
+    console.log( f(3) );
+
+
+
+    console.log( typeof(f2) );
+    console.log( f2(9) );
+    //函数声明
+    function f2( a ){
+        return a*a;
+    }
+    </script>
+</body>
+</html>

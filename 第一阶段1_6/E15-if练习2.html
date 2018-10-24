@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if练习</title>
+</head>
+<body>
+    
+
+    <script>
+    var a = 7;
+//1-5 输出工作日  6-7 输出周末
+    if( a == 6 || a == 7 ){
+        console.log("周末");
+    }else{
+        console.log('工作日');
+    }
+
+
+//判断用户名是否为空
+var userName = null;
+
+    if ( userName == null || userName == "" || userName.length == 0){
+        console.log("空");
+    }
+
+
+//
+var t = "sss";
+if( typeof( t ) == "string" ){
+    console.log( Number( t ) );
+}else {
+    console.log( !!t );
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js基础语法</title>
+</head>
+<body>
+    <script>
+
+// 1.直接量:
+    // 数值
+    // 字符串
+    // 布尔值
+    console.log('123456');
+// 2.JavaScript的注释
+    // 单行注释
+    /*多行
+    注释*/ 
+// 3.JavaScript的语句
+// 赋值语句
+    var x = 123;    //数值
+    var y = "3333"; //字符串
+    var z = true;   //布尔值
+    var a = [];     //数组
+    console.log( x );
+
+//先声明变量 然后进行赋值
+    var t;
+    t = 8 * 9;      //*代表乘法
+    console.log("8 * 9 =" + t);
+
+    t = "字符串";
+    console.log(t);
+
+//定义多个变量
+var a1, a2, a3, a4;  //声明四个变量
+a1 = 1;
+a2 = 2;
+a3 = 3;
+a4 = 4; 
+
+var b1 = 1, b2 = 2, b3 = 3;
+
+//绝对不推荐的一种  面试题目
+// 定义了一个c1局部变量，c2  c3  c4 全局变量
+var c1 = c2 = c3 = c4 = 0;   
+    </script>
+</body>
+</html>

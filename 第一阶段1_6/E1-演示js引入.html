@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>演示js的三种引用方式</title>
+</head>
+<body>
+     <!-- 第一种方式 :行内的js脚本 -->
+    <h1 onclick="alert('我是第一种引入方式，行内的js脚本')">标题标签</h1>
+
+    <input type="button" value="按钮">
+    <script>
+        // 第二种:嵌入的js脚本，一般会在body之前。
+        alert('我是第二种引入方式，嵌入的js脚本');
+    </script>
+    <!-- 第三种：外部引入的js脚本 -->
+    <script src="./js/01.js"></script>
+</body>
+</html>

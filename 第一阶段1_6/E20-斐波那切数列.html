@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>斐波那切数列</title>
+</head>
+<body>
+    
+
+    <script>
+    
+        //斐波那切数列
+
+        var a = [];
+        a[0] = 0;
+        a[1] = 1;
+        
+        console.log("a[0] = 0");
+        console.log("a[1] = 1");
+
+        for ( var i = 2; i <= 100; i++ ){
+            a[i] = a[i-1] + a[i-2]
+            console.log( "a[" + i + "] = " + a[i] );
+        }
+
+        var fn0 = 0,fn1 = 1,result = 0;
+        for ( var j = 2; j <= 100; j++ ){
+            result = fn1 + fn0;
+
+            fn0 = fn1;
+            fn1 = result;
+
+            console.log( result );
+        }
+    </script>
+</body>
+</html>

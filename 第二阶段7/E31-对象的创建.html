@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的创建</title>
+</head>
+
+<body>
+
+
+    <script>
+        //创建Object对象
+        //第一种：使用new操作符创建对象
+        var t = new Object();   //创建了一个Object对象t
+        //new 会创建一个对象，然后对象执行Object函数，最后返回
+        //js是一个动态的语言  可以随时添加属性和方法
+        t.age = 19;
+        t.name = "jack";
+        t.run = function () {
+            console.log("奔跑....");
+        }
+        t["demo"] = "demo";
+
+        //对象怎么使用自己的属性和方法
+        //第一种方法： 使用点的方式
+        console.log(t.age);
+
+        // 第二种方法：使用中括号 内字符串的方式
+        console.log(t["name"]);
+
+    </script>
+</body>
+
+</html>

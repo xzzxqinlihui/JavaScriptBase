@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>delete</title>
+</head>
+<body>
+    <script>
+        var t = {};// t = new Object();
+        t.age = 19;
+        console.log( t.age );
+
+        //通过delete操作符 删除属性
+        delete t.age;//删除t的自定义age属性
+
+        console.log( t.age );
+
+        //通过 in 运算符，可以检查属性是否属于对象的自定义属性，返回的结果是true或者false
+        t.name = "123";
+        console.log( "name" in t );
+        delete t["name"];
+        console.log( "name" in  t );
+    
+    </script>
+</body>
+</html>
