@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串删除练习</title>
+</head>
+
+<body>
+    <script>
+        //输入两个字符串，从第一个字符串中删除第二个字符串中的所有字符，不可用replace
+        //They are student    aeiou
+        //删除之后变成第一个字符串     Thy r stdnts
+
+        var str1 = "They are students",
+            str2 = "aeiou",
+            res = "";
+
+        //思路
+        //判断一个字符串在另一个字符串中 用indexOf() 返回索引或者-1
+        //遍历str1中的所有字符，然后判断是否在str2中  如果在就舍弃  不在就加到res中
+
+        for (var i = 0; i < str1.length; i++) {
+            if (str2.indexOf(str1[i]) < 0) {
+                res += str1[i];
+            }
+        }
+        console.log(res);
+    </script>
+</body>
+
+</html>

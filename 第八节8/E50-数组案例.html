@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组案例</title>
+</head>
+<body>
+    
+
+    <script>
+    var arr = [90,8,34,2,39,87,22,10];
+    //1 将数组内容进行反序
+    arr.reverse( arr );
+    console.log( arr );
+    //第二种方法：创建一个新数组，逆序之间存放 原数组的数据内容
+    arr = [90,8,34,2,39,87,22,10];
+    var arrt = [arr.length];
+    for(var i = arr.length - 1, k = 0;i >= 0;i--,k++){
+        arrt[k] = arr[i];
+    }
+    console.log(arrt);
+
+    //第三种方法
+    for(var i=0;i<arr.length;i++){
+        arrt[arr.length-1-i] = arr[i]; 
+    }
+    console.log( arrt );
+    //第四种方法:前后交换
+    for(var i= 0;i<arr.length/2;i++){
+        var te = arr[i];
+        arr[i] = arr[arr.length-1-i]; 
+        arr[arr.length-1-i] = te;
+    }
+    console.log(arr);
+
+
+
+
+
+    arr = [90,8,34,2,39,87,22,10];
+    //2 求一个数据数组中的最小值及它的索引
+    var minvalue = arr[0];//默认初始值
+    var minindex = 0;//默认初始值
+    for( var k in arr ){
+        //如果遍历到的值小于初始值，则将遍历的到的值赋值给最小值，并记录索引
+        if(arr[k] < minvalue ){
+            minvalue = arr[k]
+            minindex = k;
+        }
+    }
+    console.log( "最小值是：" + minvalue );
+    console.log( "最小值索引是：" + minindex );
+
+    arr = [90,8,34,2,39,87,22,10];
+    //3 求一个数组中的数据的平均值 最大值  和
+    var maxvalue = arr[0],
+        avgvalue = 0,
+         sumvalue = 0;
+    for( var i = 0;i < arr.length;i++ ){
+        //如果遍历到的值大于初始值，则将遍历到的值赋值给最小值
+        if( arr[i] > maxvalue ){
+            maxvalue = arr[i];
+        }
+        //求和
+        sumvalue += arr[i];
+    }
+    //求平均值
+     avgvalue = sumvalue/arr.length;
+    //输出数据
+    console.log( "平均值是：" + avgvalue );
+    console.log( "最大值是：" + maxvalue );
+    console.log( "和是：" + sumvalue );
+
+    arr = [90,8,34,2,39,87,22,10];
+    //4 数组的数据进行排序
+    arr.sort( function(a,b){
+        return a - b;
+    } );
+    console.log( arr );
+
+    arr = [90,8,34,2,39,87,22,10];
+    //5 逐个比较排序算法
+    var temp = 0;
+    for( var i = 0; i < arr.length-1;i++ ){
+        for(var j = i+1; j < arr.length;j++){
+            if( arr[i] > arr[j] ){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    //输出结果
+    console.log( "逐个比较"+arr );
+
+   //冒泡法
+    //第一个循环控制趟数 
+    for( var i = 0; i<arr.length-1;i++ ){
+    //第二个循环，每一趟里，要对比所有的数据进行交换 把大的交换到后面的位置
+    for( var j = 0;j < arr.length-1-i;j++  ){
+
+        if( arr[j] < arr[j+1] ){
+            temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+        }
+    }
+
+    }
+    console.log( "冒泡法："+arr );
+
+
+    arr = [90,8,34,2,39,87,22,10,10,2,39,8,90,2,2,2,2,10];
+    //6 给定一个数组，请去掉数组中的重复数据
+    //定义另一个数组，并且赋初值为arr[0]
+    //将数组与另一个数组的所有数字进行比较 假设不存在未false
+    //如果另一数组存在  那么就是true
+    //将数组arr中的数  一次跟arrtemp中的数字进行比较
+    //如果存在，那么就跳过
+    //如果不存在，就push
+    var arrtemp = [];
+    //原数组的第一个元素插入新数组
+    arrtemp[0] = arr[0];
+    //把后续的原数组中的元素插入到新数组中，插入前判断新数组中是否存在元素
+    //如果存在继续下一次循环，如果不存在就把元素插入到新数组中。
+    
+    for( var i = 0 ;i < arr.length; i++ ){//遍历原数组中的元素
+       
+       //有一种indexOf的方法,ie8不能用
+    //    if( arrtemp.indexOf(arr[i]) == -1 ){
+    //        arr.push( arr[i] );
+    //    }
+       
+       
+        //假设在 另一个数组里不存在
+      
+        for( var j = 0;j < arrtemp.length;j++ ){
+            if( arr[i] == arr[j] ){
+                //在另一个数组存在，不插入
+              
+                break;
+            }
+        }
+        if( j == arrtemp.length ){
+            //如果另一个数组不存在该数，就在另一个数组中加入该数
+                arrtemp.push( arr[i] );
+            }
+    }
+    console.log( arrtemp );
+
+    //另一种方法  哈希
+    arr = [90,8,34,2,39,87,22,10,10,2,39,8,90,2,2,2,2,10];
+
+    var h ={};
+    for( var k in arr ){
+        var str = arr[k].toString();//把数组中的元素赋值给str
+        h[str] = arr[k];        //把数组中的元素只设置给对象的属性，并给属性值赋值为数组的水元素
+        //我们利用了：对象的属性不能重复，如果重复定义后面的会覆盖前面的定义。
+    }
+
+    var t =[];
+    for( var k in h ){
+        t.push(h[k]);
+    }
+
+    console.log( t );
+
+
+    
+
+    </script>
+</body>
+</html>
